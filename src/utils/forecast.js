@@ -9,7 +9,7 @@ const forecast = (latitud, longitud, callback) =>{
         }else if(body.error){
             callback('Coordenadas no válidas', undefined)
         }else {
-            callback(undefined,`El clima es ${body.current.weather_descriptions[0]} En este momento hay ${body.current.temperature}°. Afuera se siente como si haría ${body.current.feelslike}°`);
+            callback(undefined,`El clima es ${body.current.weather_descriptions[0]} En este momento hay ${body.current.temperature}°. Afuera se siente como si haría ${body.current.feelslike}°`, body.current.weather_icons[0]);
         }
     })
 }
